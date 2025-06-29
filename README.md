@@ -14,7 +14,7 @@ An interactive 3D aquarium simulation built with Three.js featuring realistic wa
 
 ## Installation 🛠️
 ```bash
-git clone https://github.com/your-username/virtual-aquarium.git
+git clone https://github.com/Mekd422/virtual-aquarium.git
 cd virtual-aquarium
 npm install
 npm start
