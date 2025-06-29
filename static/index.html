@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script id="vertex-shader" type="x-shader/x-vertex">
+		attribute vec4 vPosition;
+		attribute vec4 tColor;
+		varying vec4 vColor;
+		uniform vec4 uPosition;
+		uniform mat4 uMatrix;
+		void main()
+		{
+		vColor = tColor;
+			gl_Position=uMatrix*(vPosition);
+		}
+	</script>
+	<script id="fragment-shader" type="x-shader/x-fragment">
+		precision mediump float;
+		varying vec4 vColor;
+
+		void main()
+		{
+			gl_FragColor=vColor;
+		}
+	</script>
+	<link rel="stylesheet" href="/css/index.css">
+
+
+
+	<script type="module" src="js/index.js"></script>
+
+</head>
+<body>
+	<canvas id="gl-canvas">
+		Oops! it has Error!
+	</canvas>
+	<div id="blocker">
+		<div id="instructions">
+			<p style="display: contents; font-size: 36px; font-weight:bold">Click to play</p>
+			<br/><br/>
+			1st person view: F<br/>
+			1st person control: WASD + Mouse <br/>
+			3rd person View: T
+		</div>
+	</div>
+	<!-- Update the manual section to match this -->
+<div id="guis">
+  <button id="manual-btn">Show Manual</button>
+  <div id="manual">
+    <p style="font-size: 25px; font-weight:bold; margin-top:0">Aquarium Controls</p>
+    1st person View: F<br/>
+    1st person Control: WASD + Mouse <br/>
+    3rd person View: T<br/>
+    3rd person Control: Mouse<br/><br/>
+    <small>Click anywhere to start</small>
+  </div>
+  <div id="dirty_timer">
+    <p style="display: contents; font-size: 20px; font-weight:bold">Water Quality:</p>
+    <p id="timer" style="display: contents; font-size: 20px; font-weight:bold">0%</p>
+  </div>
+</div>
+	<div id="loading" style="color:white;">
+		<div>
+		  <div>...loading...</div>
+		</div>
+	</div>
+</body>
+</html>
